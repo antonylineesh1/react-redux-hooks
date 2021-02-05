@@ -1,4 +1,4 @@
-import { CREATE_CONTACT, DELETE_CONTACT, EDIT_CONTACT, GET_CONTACT } from './../types/actionTypes';
+import { CLEAR_ALL_CONTACT, CREATE_CONTACT, DELETE_CONTACT, EDIT_CONTACT, GET_CONTACT, SELECT_ALL_CONTACT, DELETE_ALL_CONTACT } from './../types/actionTypes';
 
 export const addContact = contact => {
     return {
@@ -19,5 +19,19 @@ export const editContact = contact => ({
 
 export const deleteContact = (id) => ({
     type: DELETE_CONTACT,
-    payload:id
+    payload: id
 })
+
+export const selectAllContact = (selectedContacts) => ({
+    type: SELECT_ALL_CONTACT,
+    payload: selectedContacts
+})
+
+export const clearAllContacts = () => ({
+    type: CLEAR_ALL_CONTACT
+})
+
+export const deleteAllContacts = () => ({
+    type: DELETE_ALL_CONTACT
+})
+
