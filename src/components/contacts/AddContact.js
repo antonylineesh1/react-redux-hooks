@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { addContact } from '../../store';
+import { addContact } from '../../store/actions/actions';
 import {useDispatch} from 'react-redux';
 import shortid from 'shortid'
 import { useHistory } from 'react-router-dom';
