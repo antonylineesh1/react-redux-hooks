@@ -21,7 +21,7 @@ export default function Contact() {
                 </thead>
                 <tbody>
                     {contacts.map((contact, i) =>
-                        <Contacts contact={contact} />
+                        <Contacts key={i} contact={contact} />
                     )}
 
                 </tbody>
