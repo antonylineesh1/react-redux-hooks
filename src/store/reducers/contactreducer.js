@@ -1,5 +1,5 @@
 
-import { CREATE_CONTACT } from './../types/actionTypes';
+import { CREATE_CONTACT, GET_CONTACT, EDIT_CONTACT } from './../types/actionTypes';
 const initialState = {
     contacts: [
         {
@@ -232,7 +232,8 @@ const initialState = {
                 "bs": "target end-to-end models"
             }
         }
-    ]
+    ],
+    contact: null
 }
 
 const contactReducer = (state = initialState, action) => {
@@ -242,6 +243,24 @@ const contactReducer = (state = initialState, action) => {
             return {
                 ...state,
                 contacts: [action.payload, ...state.contacts]
+            }
+        case GET_CONTACT:
+            let arr = state.contacts.filter((contact) => contact.id === action.payload);
+            arr = arr.values();
+            for (let val of arr) {
+                arr = val;
+            }
+
+            return {
+                ...state,
+                contact: arr
+            };
+        case EDIT_CONTACT:
+            return {
+                ...state,
+                contacts: state.contacts.map(contact => {
+                    return contact.id == action.payload.id ? action.payload : contact;
+                })
             }
         default:
             return state;
