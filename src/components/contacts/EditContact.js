@@ -25,8 +25,6 @@ export default function EditContact() {
 
 
     const updateContact = (e) => {
-
-
         console.log('name', name);
         console.log('email', email);
         console.log('phone', phone);
